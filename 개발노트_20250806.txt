@@ -1,0 +1,5 @@
+< github token(2025-08-04) >
+
+https://github.com/jkkang65-hue/lafayette.git
+
+(token) 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
