@@ -15,4 +15,12 @@ public class AdminMemberController {
 		
 		return "admin/member/create_account_form";
 	}
+	
+	@RequestMapping(value = "/createAccountConfirm", method = RequestMethod.POST)
+	public String createAccountConfirm() {
+		
+		System.out.println("[AdminMemberController] createAccountConfirm() is called...");
+		
+		return null;
+	}
 }
