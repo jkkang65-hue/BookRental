@@ -31,18 +31,18 @@
 				<li><a href="<c:url value='/book/admin/registerBookForm' />">도서등록</a></li>
 			</ul>
 		</div>
-		<%
-		} else {
-		%>
+<%-- 		<% --%>
+// 		} else {
+<%-- 		%> --%>
 		<div class="menu">
 			<ul>
 				<li><a href="<c:url value='/admin/member/loginForm' />">로그인</a></li>
 				<li><a href="<c:url value='/admin/member/createAccountForm' />">회원가입</a></li>
 			</ul>
 		</div>
-		<%
-		}
-		%>
+<%-- 		<% --%>
+// 		}
+<%-- 		%> --%>
 		
 		<div class="search">
 			
