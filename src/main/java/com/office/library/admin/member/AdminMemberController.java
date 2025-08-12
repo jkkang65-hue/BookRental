@@ -17,7 +17,7 @@ public class AdminMemberController {
 	}
 	
 	@RequestMapping(value = "/createAccountConfirm", method = RequestMethod.POST)
-	public String createAccountConfirm() {
+	public String createAccountConfirm(AdminMemberVo adminMemberVo) {
 		
 		System.out.println("[AdminMemberController] createAccountConfirm() is called...");
 		
