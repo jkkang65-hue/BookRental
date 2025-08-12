@@ -1,5 +1,6 @@
 package com.office.library.admin.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/admin/member")
 public class AdminMemberController {
 
+	@Autowired
+	AdminMemberService adminMemberService;
+	
 	@RequestMapping(value = "/createAccountForm", method = RequestMethod.GET)
 	public String createAccountForm() {
 		
@@ -21,6 +25,11 @@ public class AdminMemberController {
 		
 		System.out.println("[AdminMemberController] createAccountConfirm() is called...");
 		
-		return null;
+		int result = adminMemberService.createAccountConfirm(adminMemberVo);
+		
+		if (result <= 0) 
+			return "admin/member/create_account_ng";
+		
+		return "admin/member/create_account_ok";
 	}
 }
