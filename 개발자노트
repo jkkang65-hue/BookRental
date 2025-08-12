@@ -1,0 +1,5 @@
+<2025-08-13>
+
+apm_setup에서 db 구성
+ - db name은 db_library
+ - db user/password는 dbuser/dbuser123
