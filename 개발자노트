@@ -1,5 +1,12 @@
-<2025-08-13>
+<2025-08-13-수>
 
 apm_setup에서 db 구성
  - db name은 db_library
  - db user/password는 dbuser/dbuser123
+ 
+
+<2025-08-17-일>
+
+spring 5.2.25.RELEASE, Java11, mysql-5.1.41에서 호환가능한 mysql jdbc 드라이버 버전은 아래와 같음
+mysql-connector-java-5.1.49
+

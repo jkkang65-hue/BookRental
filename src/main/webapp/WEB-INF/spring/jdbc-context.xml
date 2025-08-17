@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx.xsd">
+          
+          
+   <!-- MySQL DataSource -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!-- MySQL 5.1 드라이버일 경우 -->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+
+        <!-- MySQL 8.x 드라이버일 경우 -->
+<!--         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/> -->
+
+        <property name="url" value="jdbc:mysql://localhost:3306/db_library?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="dbuser"/>
+        <property name="password" value="dbuser123"/>
+    </bean>          
+          
+    <!-- JdbcTemplate 등록 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>          
+          
+</beans>          
