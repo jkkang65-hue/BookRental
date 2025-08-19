@@ -32,4 +32,12 @@ public class AdminMemberController {
 		
 		return "admin/member/create_account_ok";
 	}
+	
+	@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
+	public String loginForm() {
+		
+		System.out.println("[AdminMemberController] loginForm() is called...");
+		
+		return "admin/member/login_form";
+	}
 }
