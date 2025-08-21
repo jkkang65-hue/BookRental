@@ -15,7 +15,7 @@ public class AdminMemberService {
 	
 	public int createAccountConfirm(AdminMemberVo adminMemberVo) {
 		
-		System.out.println("[AdminMemberService] createAccountConfirm()");
+		System.out.println("[AdminMemberService] createAccountConfirm() is called...");
 		
 		boolean isMember = adminMemberDao.isAdminMember(adminMemberVo.getA_m_id());
 		
@@ -29,6 +29,21 @@ public class AdminMemberService {
 		} else {
 			return ADMIN_ACCOUNT_ALREADY_EXIST;
 		}
+	}
+	
+	public AdminMemberVo loginConfirm(AdminMemberVo adminMemberVo) {
+		
+		System.out.println("[AdminMemberService] loginConfirm() is called...");
+		
+		AdminMemberVo loginedAdminMemberVo =
+				adminMemberDao.selectAdmin(adminMemberVo);
+		
+		if (loginedAdminMemberVo != null)
+			System.out.println("[AdminMemberService] ADMIN MEMBER LOGIN SUCCESS!");
+		else
+			System.out.println("[AdminMemberService] ADMIN MEMBER LOGIN FAIL!");
+
+		return loginedAdminMemberVo;	
 	}
 	
 }

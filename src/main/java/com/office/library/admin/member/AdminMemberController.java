@@ -40,4 +40,19 @@ public class AdminMemberController {
 		
 		return "admin/member/login_form";
 	}
+	
+	@RequestMapping(value = "/loginConfirm", method = RequestMethod.POST)
+	public String loginConfirm(AdminMemberVo adminMemberVo) {
+		
+		System.out.println("[AdminMemberController] loginConfirm() is called...");
+		
+		AdminMemberVo loginedAdminMemberVo = adminMemberService.loginConfirm(adminMemberVo);
+		
+		if (loginedAdminMemberVo == null) {
+			return "admin/member/login_ng";	
+		}
+		
+		return "admin/member/login_ok";
+		
+	}
 }
